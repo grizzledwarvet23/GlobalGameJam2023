@@ -12,8 +12,29 @@ public class Roots : MonoBehaviour
     public Slider healthBar;
     public CharacterController2D player;
 
+    private Animator animator;
+
+
+    void Start() {
+        animator = GetComponent<Animator>();
+    }
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.P)) {
+            progress += 25;
+            if(progress == 25) {
+                animator.Play("growth1");
+            }
+            else if(progress == 50) {
+                animator.Play("growth2");
+            }
+            else if (progress == 75) {
+                animator.Play("growth3");
+            }
+        }
+    }
 
     public void takeDamage(int damage) {
+        animator = GetComponent<Animator>();
         health -= damage;
         healthBar.value = health/maxHealth;
         if (health <= 0) {
@@ -26,6 +47,17 @@ public class Roots : MonoBehaviour
             progress += 5;
             progressBar.value = progress/100.0f;
             other.gameObject.GetComponent<CharacterController2D>().DepositNutrient();
+
+            if(progress == 25) {
+                animator.Play("growth1");
+            }
+            else if(progress == 50) {
+                animator.Play("growth2");
+            }
+            else if (progress == 75) {
+                animator.Play("growth3");
+            }
+
             if(progress >= 100) {
                 //win
                 WinGame();
