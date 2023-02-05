@@ -32,6 +32,8 @@ public class CharacterController2D : MonoBehaviour
 
     public int health;
 
+    public Image[] lifeImages;
+
     
 
     public SpriteRenderer[] nutrientRenderers;
@@ -144,6 +146,7 @@ public class CharacterController2D : MonoBehaviour
     public void takeDamage(int damage) {
         if(!invulnerable) {
             health -= damage;
+            lifeImages[health].enabled = false;
             if(health <= 0) {
                 Die();
             }
