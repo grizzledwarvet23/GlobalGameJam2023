@@ -10,4 +10,8 @@ public class TitleScreen : MonoBehaviour
     public void PlayGame() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
+
+    public void LoadMenu() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
+    }
 }

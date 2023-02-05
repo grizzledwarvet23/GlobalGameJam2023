@@ -25,7 +25,16 @@ public class Roots : MonoBehaviour
             progress += 5;
             progressBar.value = progress/100.0f;
             other.gameObject.GetComponent<CharacterController2D>().DepositNutrient();
+            if(progress >= 100) {
+                //win
+                WinGame();
+            }
         }
+    }
+
+    public void WinGame() {
+        //set scene to main menu for now
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
     }
 
 
