@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Nutrient
+  - AmmoPack
   - Enemy
   layers:
   - Default
@@ -17,7 +18,7 @@ TagManager:
   - Player
   - Ground
   - Enemy
-  - 
+  - Item
   - 
   - 
   - 
