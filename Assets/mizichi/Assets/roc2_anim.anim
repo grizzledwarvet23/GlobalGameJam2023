@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: roc_anim
+  m_Name: roc2_anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1419380026, guid: d12d7bebeac7740459d3b310698eaede, type: 3}
+      value: {fileID: -1761464061, guid: 2bc5b4067296ec84dadc39e73a05ce53, type: 3}
     - time: 0.083333336
-      value: {fileID: -128513131, guid: d12d7bebeac7740459d3b310698eaede, type: 3}
+      value: {fileID: -1004206188, guid: 2bc5b4067296ec84dadc39e73a05ce53, type: 3}
     - time: 0.16666667
-      value: {fileID: 145933186, guid: d12d7bebeac7740459d3b310698eaede, type: 3}
+      value: {fileID: -1273768659, guid: 2bc5b4067296ec84dadc39e73a05ce53, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1419380026, guid: d12d7bebeac7740459d3b310698eaede, type: 3}
-    - {fileID: -128513131, guid: d12d7bebeac7740459d3b310698eaede, type: 3}
-    - {fileID: 145933186, guid: d12d7bebeac7740459d3b310698eaede, type: 3}
+    - {fileID: -1761464061, guid: 2bc5b4067296ec84dadc39e73a05ce53, type: 3}
+    - {fileID: -1004206188, guid: 2bc5b4067296ec84dadc39e73a05ce53, type: 3}
+    - {fileID: -1273768659, guid: 2bc5b4067296ec84dadc39e73a05ce53, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

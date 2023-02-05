@@ -4,18 +4,18 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:a86e6dc7ef5e91faa6126ba180efb589:fcb5fc4f36dc7bc4838581722cfd8d0a:6b29fd142104f0a4346ecc2a86f967a3$
+# $TexturePacker:SmartUpdate:8c257aeccace7745d04f7483b89050e5:5de9f8d2f39da2d29ed40f81109f6725:6fa60aef5cf3758d559117d5afb64b7e$
 #
 :format=40300
-:texture=roc.png
+:texture=roc2.png
 :size=2048x2048
 :pivotpoints=enabled
 :borders=disabled
 :alphahandling=ClearTransparentPixels
 
-roc_0000;0;1048;1000;1000; 0.5;0.5; 0;0;0;0
-roc_0001;0;1048;1000;1000; 0.5;0.5; 0;0;0;0
-roc_0002;1000;1048;1000;1000; 0.5;0.5; 0;0;0;0
-roc_0003;1000;1048;1000;1000; 0.5;0.5; 0;0;0;0
-roc_0004;0;48;1000;1000; 0.5;0.5; 0;0;0;0
-roc_0005;0;48;1000;1000; 0.5;0.5; 0;0;0;0
+roc2_0000;0;1048;1000;1000; 0.5;0.5; 0;0;0;0
+roc2_0001;0;1048;1000;1000; 0.5;0.5; 0;0;0;0
+roc2_0002;1000;1048;1000;1000; 0.5;0.5; 0;0;0;0
+roc2_0003;1000;1048;1000;1000; 0.5;0.5; 0;0;0;0
+roc2_0004;0;48;1000;1000; 0.5;0.5; 0;0;0;0
+roc2_0005;0;48;1000;1000; 0.5;0.5; 0;0;0;0
