@@ -1741,6 +1741,7 @@ MonoBehaviour:
   shootDelay: 0.25
   firePoint: {fileID: 1075524765}
   bullet: {fileID: 1081448549781098622, guid: 3d792cdebb73475419bd95b00ea1383f, type: 3}
+  health: 3
   nutrientRenderers:
   - {fileID: 1168882893}
   - {fileID: 714176839}

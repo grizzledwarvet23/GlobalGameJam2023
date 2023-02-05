@@ -51,7 +51,7 @@ public class RabbitEnemy : MonoBehaviour
         touchDamageTopRight.Set(touchDamageCheck.position.x + (touchDamageWidth / 2), touchDamageCheck.position.y + (touchDamageHeight / 2));
         Collider2D hit = Physics2D.OverlapArea(touchDamageBotLeft, touchDamageTopRight, whatIsPlayer);
         if(hit != null) {
-            Debug.Log("Player Take Damage");
+            hit.GetComponent<CharacterController2D>().takeDamage(1);
         }
 
     }

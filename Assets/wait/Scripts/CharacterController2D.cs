@@ -30,6 +30,8 @@ public class CharacterController2D : MonoBehaviour
     public Transform firePoint;
     public GameObject bullet;
 
+    public int health;
+
     
 
     public SpriteRenderer[] nutrientRenderers;
@@ -47,6 +49,8 @@ public class CharacterController2D : MonoBehaviour
     public Transform handSpriteAxis;
     public SpriteRenderer gunSprite;
     public AudioSource reloadSound;
+
+    private bool invulnerable = false;
 
     void Start()
     {
@@ -135,6 +139,28 @@ public class CharacterController2D : MonoBehaviour
                 DropNutrient();
             }
         }
+    }
+
+    public void takeDamage(int damage) {
+        if(!invulnerable) {
+            health -= damage;
+            if(health <= 0) {
+                Die();
+            }
+            StartCoroutine(FlashRed());
+        }
+    }
+
+    IEnumerator FlashRed() {
+        invulnerable = true;
+        for(int i = 0; i < 3; i++) {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.2f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        invulnerable = false;
     }
 
     void Shoot(Vector2 direction)
