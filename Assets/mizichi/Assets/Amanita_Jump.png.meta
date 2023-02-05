@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b957a320b28dc904e9d59e11ccc3679c
+guid: bd42edee8bac5d6439cc11e7b246422c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Amanita_Run_0
+      name: Amanita_Jump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ab51d42451e9c3479fa30c0963ff2c4
-      internalID: 691758587
+      spriteID: e22c98a14c439d54aafba250e8d849ba
+      internalID: -118814642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_1
+      name: Amanita_Jump_1
       rect:
         serializedVersion: 2
         x: 864
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a483dbcc40572e842aac0f26aca773cf
-      internalID: -1301922698
+      spriteID: af31e0b2948002448baa7135fc95515f
+      internalID: 913910676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_2
+      name: Amanita_Jump_2
       rect:
         serializedVersion: 2
         x: 1728
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3712e583641841a4c8ada170acfad2ae
-      internalID: 443980247
+      spriteID: 9aad3e19c2cac9345b3f5184dc7aebff
+      internalID: -1276009891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_3
+      name: Amanita_Jump_3
       rect:
         serializedVersion: 2
         x: 2592
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e47845a8978b4b4418df64ac479bce74
-      internalID: -1909335506
+      spriteID: 25d9354cacd63af44b77b702023f911d
+      internalID: 1887491300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_4
+      name: Amanita_Jump_4
       rect:
         serializedVersion: 2
         x: 0
@@ -215,29 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cc4941d4c65faf4587bd5974ddef57f
-      internalID: -1528040923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Amanita_Run_5
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 320
-        width: 864
-        height: 864
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28e7f42abc450e542bf0d6fc50e2ab92
-      internalID: 805335526
+      spriteID: 2fb5bae777cc5af47992946aa0b39605
+      internalID: 238789052
       vertices: []
       indices: 
       edges: []
@@ -253,12 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Amanita_Run_4: -1528040923
-      Amanita_Run_3: -1909335506
-      Amanita_Run_0: 691758587
-      Amanita_Run_1: -1301922698
-      Amanita_Run_2: 443980247
-      Amanita_Run_5: 805335526
+      Amanita_Jump_1: 913910676
+      Amanita_Jump_3: 1887491300
+      Amanita_Jump_2: -1276009891
+      Amanita_Jump_0: -118814642
+      Amanita_Jump_4: 238789052
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

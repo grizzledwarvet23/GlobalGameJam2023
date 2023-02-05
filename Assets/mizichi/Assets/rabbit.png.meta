@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b957a320b28dc904e9d59e11ccc3679c
+guid: bcd5b4bae6dfe00448a75e387704e8b6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Amanita_Run_0
+      name: rabbit_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ab51d42451e9c3479fa30c0963ff2c4
-      internalID: 691758587
+      spriteID: 9fa57ad522c67ae4fb69b3761aaf0e07
+      internalID: -1771747915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_1
+      name: rabbit_1
       rect:
         serializedVersion: 2
         x: 864
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a483dbcc40572e842aac0f26aca773cf
-      internalID: -1301922698
+      spriteID: 041cfcfed3b1b0743913bbab9e7393e7
+      internalID: -982415317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_2
+      name: rabbit_2
       rect:
         serializedVersion: 2
         x: 1728
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3712e583641841a4c8ada170acfad2ae
-      internalID: 443980247
+      spriteID: 06bc9d7cc004fea449a509fc0729a274
+      internalID: -1470552776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_3
+      name: rabbit_3
       rect:
         serializedVersion: 2
         x: 2592
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e47845a8978b4b4418df64ac479bce74
-      internalID: -1909335506
+      spriteID: a1ad2ac75f1f1644b9c35e6a8e407787
+      internalID: -1360389880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_4
+      name: rabbit_4
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cc4941d4c65faf4587bd5974ddef57f
-      internalID: -1528040923
+      spriteID: 15a0431f597a06a4faea3d1028368973
+      internalID: 421934361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amanita_Run_5
+      name: rabbit_5
       rect:
         serializedVersion: 2
         x: 864
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28e7f42abc450e542bf0d6fc50e2ab92
-      internalID: 805335526
+      spriteID: 9efbfd4baf9de024cb2bf603995691cf
+      internalID: 345568842
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Amanita_Run_4: -1528040923
-      Amanita_Run_3: -1909335506
-      Amanita_Run_0: 691758587
-      Amanita_Run_1: -1301922698
-      Amanita_Run_2: 443980247
-      Amanita_Run_5: 805335526
+      rabbit_3: -1360389880
+      rabbit_1: -982415317
+      rabbit_2: -1470552776
+      rabbit_4: 421934361
+      rabbit_5: 345568842
+      rabbit_0: -1771747915
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
