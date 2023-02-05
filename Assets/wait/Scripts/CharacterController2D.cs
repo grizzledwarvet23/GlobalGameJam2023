@@ -37,16 +37,29 @@ public class CharacterController2D : MonoBehaviour
 
     public AudioSource gunSound;
 
+    private Animator animator;
+
+    private bool facingRight;
+
+    public Transform handSpriteAxis;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         canShoot = true;
         carryingNutrient = false;
+        facingRight = true;
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
+        if(horizontal != 0) {
+            animator.SetBool("isRunning", true);
+        } else {
+            animator.SetBool("isRunning", false);
+        }
         if(carryingNutrient) {
             Vector2 movement = new Vector2(horizontal * carrySpeed, rb.velocity.y);
             rb.velocity = movement;
@@ -54,8 +67,20 @@ public class CharacterController2D : MonoBehaviour
             Vector2 movement = new Vector2(horizontal * speed, rb.velocity.y);
             rb.velocity = movement;
         }
+
+        if (horizontal > 0 && !facingRight) {
+            Flip();
+        } else if (horizontal < 0 && facingRight) {
+            Flip();
+        }
         
 
+    }
+
+    void Flip() {
+        facingRight = !facingRight;
+        //then rotate instead of using scale
+        transform.Rotate(0f, 180f, 0f);
     }
 
     void Update() {
@@ -64,6 +89,12 @@ public class CharacterController2D : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
+
+        Vector2 aimDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        handSpriteAxis.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
 
         if (Input.GetButton("Fire1") && canShoot && !carryingNutrient && ammo > 0)
         {
@@ -97,7 +128,7 @@ public class CharacterController2D : MonoBehaviour
 
     bool isGrounded() {
         //create raycast to check if the player is grounded, if the raycast hits something with tag "Ground", the player is grounded. use the ground layer mask
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, groundMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 3.5f, groundMask);
         if (hit.collider != null && hit.collider.CompareTag("Ground"))
         {
             return true;
