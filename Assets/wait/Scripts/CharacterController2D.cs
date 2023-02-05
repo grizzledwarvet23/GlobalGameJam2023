@@ -144,7 +144,7 @@ public class CharacterController2D : MonoBehaviour
 
     bool isGrounded() {
         //create raycast to check if the player is grounded, if the raycast hits something with tag "Ground", the player is grounded. use the ground layer mask
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 3.5f, groundMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 2.5f, groundMask);
         if (hit.collider != null && hit.collider.CompareTag("Ground"))
         {
             animator.SetBool("isJumping", false);
@@ -190,5 +190,12 @@ public class CharacterController2D : MonoBehaviour
         carryingNutrient = false;
         redNutrientRenderer.enabled = false;
         gunSprite.enabled = true;
+    }
+
+    //on draw gizmos to show ground check raycast
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - 2.5f));
     }
 }
