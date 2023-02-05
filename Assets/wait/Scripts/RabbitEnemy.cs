@@ -14,8 +14,14 @@ public class RabbitEnemy : MonoBehaviour
     public Roots root;
 
     bool startedAttacking = false;
+
+    public Animator bloodAnimatorOne;
+    public Animator bloodAnimatorTwo;
     
     void Start() {
+        //stop the blood animations from playing
+        bloodAnimatorOne.enabled = false;
+        bloodAnimatorTwo.enabled = false;
         root = GameObject.Find("Roots").GetComponent<Roots>();
     }
 
@@ -42,6 +48,15 @@ public class RabbitEnemy : MonoBehaviour
 
     public void takeDamage(int damage) {
         health--;
+        bloodAnimatorOne.enabled = true;
+        bloodAnimatorTwo.enabled = true;
+        //randomly choose which blood animation to play
+        if(Random.Range(0, 2) == 0) {
+            bloodAnimatorOne.Play("bloodsplatter");
+        } else {
+            bloodAnimatorTwo.Play("bloodsplatter");
+        }
+
         if (health <= 0) {
             Destroy(gameObject);
         }
