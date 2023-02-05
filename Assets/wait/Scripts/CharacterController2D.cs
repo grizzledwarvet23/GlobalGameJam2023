@@ -91,8 +91,16 @@ public class CharacterController2D : MonoBehaviour
         }
 
         Vector2 aimDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        //do aim direction, but just flip if the gun is facing left
+
+
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         handSpriteAxis.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        if(angle >= 90  || angle <= -90) {
+            handSpriteAxis.transform.eulerAngles = new Vector3(180, 0, -handSpriteAxis.transform.eulerAngles.z);
+        } else {
+            handSpriteAxis.transform.eulerAngles = new Vector3(0, 0, handSpriteAxis.transform.eulerAngles.z);
+        }
 
 
 
