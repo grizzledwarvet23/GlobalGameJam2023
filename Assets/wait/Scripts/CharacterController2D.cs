@@ -50,6 +50,7 @@ public class CharacterController2D : MonoBehaviour
 
     void Start()
     {
+        PauseMenu.GameIsPaused = false;
         rb = GetComponent<Rigidbody2D>();
         canShoot = true;
         carryingNutrient = false;
@@ -59,24 +60,27 @@ public class CharacterController2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        if(horizontal != 0) {
-            animator.SetBool("isRunning", true);
-        } else {
-            animator.SetBool("isRunning", false);
-        }
-        if(carryingNutrient) {
-            Vector2 movement = new Vector2(horizontal * carrySpeed, rb.velocity.y);
-            rb.velocity = movement;
-        } else {
-            Vector2 movement = new Vector2(horizontal * speed, rb.velocity.y);
-            rb.velocity = movement;
-        }
 
-        if (horizontal > 0 && !facingRight) {
-            Flip();
-        } else if (horizontal < 0 && facingRight) {
-            Flip();
+        if(!PauseMenu.GameIsPaused) {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            if(horizontal != 0) {
+                animator.SetBool("isRunning", true);
+            } else {
+                animator.SetBool("isRunning", false);
+            }
+            if(carryingNutrient) {
+                Vector2 movement = new Vector2(horizontal * carrySpeed, rb.velocity.y);
+                rb.velocity = movement;
+            } else {
+                Vector2 movement = new Vector2(horizontal * speed, rb.velocity.y);
+                rb.velocity = movement;
+            }
+
+            if (horizontal > 0 && !facingRight) {
+                Flip();
+            } else if (horizontal < 0 && facingRight) {
+                Flip();
+            }
         }
         
 
@@ -89,44 +93,47 @@ public class CharacterController2D : MonoBehaviour
     }
 
     void Update() {
-        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        }
 
-        Vector2 aimDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-        //do aim direction, but just flip if the gun is facing left
+        if(!PauseMenu.GameIsPaused) {
+            if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            }
 
-
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        handSpriteAxis.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        if(angle >= 90  || angle <= -90) {
-            handSpriteAxis.transform.eulerAngles = new Vector3(180, 0, -handSpriteAxis.transform.eulerAngles.z);
-        } else {
-            handSpriteAxis.transform.eulerAngles = new Vector3(0, 0, handSpriteAxis.transform.eulerAngles.z);
-        }
-
-        if(handSpriteAxis.transform.localEulerAngles.y >= 178 && handSpriteAxis.transform.localEulerAngles.y <= 182) {
-            //behind the back
-            gunSprite.sortingOrder = 0;
-        } else {
-            gunSprite.sortingOrder = 2;
-        }
+            Vector2 aimDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+            //do aim direction, but just flip if the gun is facing left
 
 
+            float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+            handSpriteAxis.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            if(angle >= 90  || angle <= -90) {
+                handSpriteAxis.transform.eulerAngles = new Vector3(180, 0, -handSpriteAxis.transform.eulerAngles.z);
+            } else {
+                handSpriteAxis.transform.eulerAngles = new Vector3(0, 0, handSpriteAxis.transform.eulerAngles.z);
+            }
 
-        if ( (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Z)) && canShoot && !carryingNutrient && ammo > 0)
-        {
-            canShoot = false;
-            isShooting = true;
-            Vector2 shootDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-            Shoot(shootDirection);
-            StartCoroutine(enableShoot());
-        }
+            if(handSpriteAxis.transform.localEulerAngles.y >= 178 && handSpriteAxis.transform.localEulerAngles.y <= 182) {
+                //behind the back
+                gunSprite.sortingOrder = 0;
+            } else {
+                gunSprite.sortingOrder = 2;
+            }
 
-        if(carryingNutrient && canDrop && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(1))) {
-            DropNutrient();
+
+
+            if ( (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Z)) && canShoot && !carryingNutrient && ammo > 0)
+            {
+                canShoot = false;
+                isShooting = true;
+                Vector2 shootDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+                Shoot(shootDirection);
+                StartCoroutine(enableShoot());
+            }
+
+            if(carryingNutrient && canDrop && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(1))) {
+                DropNutrient();
+            }
         }
     }
 
@@ -160,6 +167,7 @@ public class CharacterController2D : MonoBehaviour
 
     public void Die() {
         //play LoseScreen scene
+        PauseMenu.GameIsPaused = false;
         UnityEngine.SceneManagement.SceneManager.LoadScene("LoseScreen");
     }
 
