@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         yield return new WaitForSeconds(time);
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
-        yield return new WaitForSeconds(0.5f); //wait for the sound to finish playing
+        yield return new WaitForSeconds(1f); //wait for the sound to finish playing
         Destroy(gameObject);
     }
 

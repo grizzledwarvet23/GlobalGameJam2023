@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageSound: {fileID: 4393388624258459406}
+  killSound: {fileID: 8997964139245521025}
   timeUntilDeathSeconds: 2
 --- !u!70 &5237544417577390280
 CapsuleCollider2D:
@@ -247,7 +248,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2262ef07942ff1246840b893c64d7686, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
