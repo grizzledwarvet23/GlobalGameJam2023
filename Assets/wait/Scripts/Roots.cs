@@ -10,13 +10,14 @@ public class Roots : MonoBehaviour
     public int progress = 0;
     public Slider progressBar;
     public Slider healthBar;
+    public CharacterController2D player;
 
 
     public void takeDamage(int damage) {
         health -= damage;
         healthBar.value = health/maxHealth;
         if (health <= 0) {
-        //    Destroy(gameObject);
+            player.Die();
         }
     }
 

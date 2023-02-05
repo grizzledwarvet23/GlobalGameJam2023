@@ -46,6 +46,7 @@ public class CharacterController2D : MonoBehaviour
 
     public Transform handSpriteAxis;
     public SpriteRenderer gunSprite;
+    public AudioSource reloadSound;
 
     void Start()
     {
@@ -158,11 +159,13 @@ public class CharacterController2D : MonoBehaviour
     }
 
     public void Die() {
-
+        //play LoseScreen scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LoseScreen");
     }
 
     public void Reload() {
         ammo = maxAmmo;
+        reloadSound.Play();
         ammoText.text = ammo.ToString();
     }
 
