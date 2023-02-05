@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/wait/TitleScreen.unity
+    guid: ed6b381d4ab6d204a9b848d906310c1b
+  - enabled: 1
     path: Assets/wait/GameScene.unity
     guid: 1a5070c7d71169e49afbac61dec7484a
   - enabled: 1
-    path: Assets/wait/TitleScreen.unity
-    guid: ed6b381d4ab6d204a9b848d906310c1b
+    path: Assets/wait/LoseScreen.unity
+    guid: d1785cc7dc2c84f4c933d014cc5fdbe3
   m_configObjects: {}
