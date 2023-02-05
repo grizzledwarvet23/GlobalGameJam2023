@@ -42,6 +42,7 @@ public class CharacterController2D : MonoBehaviour
     private bool facingRight;
 
     public Transform handSpriteAxis;
+    public SpriteRenderer gunSprite;
 
     void Start()
     {
@@ -84,7 +85,7 @@ public class CharacterController2D : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
@@ -102,9 +103,16 @@ public class CharacterController2D : MonoBehaviour
             handSpriteAxis.transform.eulerAngles = new Vector3(0, 0, handSpriteAxis.transform.eulerAngles.z);
         }
 
+        if(handSpriteAxis.transform.localEulerAngles.y >= 178 && handSpriteAxis.transform.localEulerAngles.y <= 182) {
+            //behind the back
+            gunSprite.sortingOrder = 0;
+        } else {
+            gunSprite.sortingOrder = 2;
+        }
 
 
-        if (Input.GetButton("Fire1") && canShoot && !carryingNutrient && ammo > 0)
+
+        if ( (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Z)) && canShoot && !carryingNutrient && ammo > 0)
         {
             canShoot = false;
             isShooting = true;
@@ -139,8 +147,10 @@ public class CharacterController2D : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 3.5f, groundMask);
         if (hit.collider != null && hit.collider.CompareTag("Ground"))
         {
+            animator.SetBool("isJumping", false);
             return true;
         }
+        animator.SetBool("isJumping", true);
         return false;
     }
 
@@ -158,6 +168,7 @@ public class CharacterController2D : MonoBehaviour
         canDrop = false;
         carryingNutrient = true;
         redNutrientRenderer.enabled = true;
+        gunSprite.enabled = false;
         StartCoroutine(setDroppable());
     }
 
@@ -170,6 +181,7 @@ public class CharacterController2D : MonoBehaviour
         carryingNutrient = false;
         redNutrientRenderer.enabled = false;
         GameObject instance = Instantiate(nutrient, transform.position, Quaternion.identity);
+        gunSprite.enabled = true;
         instance.transform.parent = activeNutrients.transform;
         
     }
@@ -177,5 +189,6 @@ public class CharacterController2D : MonoBehaviour
     public void DepositNutrient() {
         carryingNutrient = false;
         redNutrientRenderer.enabled = false;
+        gunSprite.enabled = true;
     }
 }
