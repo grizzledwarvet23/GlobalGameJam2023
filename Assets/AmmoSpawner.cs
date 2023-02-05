@@ -16,7 +16,7 @@ public class AmmoSpawner : MonoBehaviour
     void Update()
     {
         if(transform.childCount == 0 && !isSpawning) {
-            StartCoroutine(SpawnAmmoPack(10));
+            StartCoroutine(SpawnAmmoPack(15));
         }
     }
 
