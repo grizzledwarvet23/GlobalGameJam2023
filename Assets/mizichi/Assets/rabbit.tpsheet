@@ -1,0 +1,31 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:96451dbcdff45b099cc0525b9990df16:9ac79125abe0d30056d6ee445ee02157:4488bc03c0a5efcf8f4c360a0f4fc449$
+#
+:format=40300
+:texture=rabbit.png
+:size=4096x2048
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=ClearTransparentPixels
+
+rabbit_0000;0;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0001;0;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0002;864;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0003;864;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0004;1728;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0005;1728;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0006;2592;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0007;2592;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0008;0;320;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0009;0;320;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0010;864;320;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0011;864;320;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0012;1728;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0013;1728;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0014;2592;1184;864;864; 0.5;0.5; 0;0;0;0
+rabbit_0015;2592;1184;864;864; 0.5;0.5; 0;0;0;0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4167112632090045062}
   - component: {fileID: 4167112632090045060}
   - component: {fileID: 4167112632090045061}
+  - component: {fileID: -718264175367179517}
   m_Layer: 8
   m_Name: Rabbit
   m_TagString: Enemy
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4167112632090045057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -36.3, y: 2.3, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,10 +75,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 2085830602, guid: 2b45fd6c297dcfa4e810bcb6386ba1f7, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -1470552776, guid: bcd5b4bae6dfe00448a75e387704e8b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.38, y: 0.32}
@@ -99,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029204521, y: -0.04925587}
+  m_Offset: {x: 0.14841366, y: -0.1840815}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.38, y: 0.32}
+    oldSize: {x: 8.64, y: 8.64}
     newSize: {x: 0.38, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.30430955, y: 0.19988643}
+  m_Size: {x: 1.4547291, y: 1.3099698}
   m_EdgeRadius: 0
 --- !u!114 &4167112632090045061
 MonoBehaviour:
@@ -129,3 +130,24 @@ MonoBehaviour:
   movingRight: 0
   leftBoundary: -10
   rightBoundary: 12
+  root: {fileID: 0}
+--- !u!95 &-718264175367179517
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167112632090045057}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56abf4f8c15f692429c0b86ccf30f66a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
