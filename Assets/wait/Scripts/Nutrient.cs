@@ -8,6 +8,8 @@ public class Nutrient : MonoBehaviour
 
     bool canBePickedUp = false;
 
+    public int nutrientType;
+
     void Start() {
         StartCoroutine(SetCanPickUp());
     }
@@ -22,7 +24,7 @@ public class Nutrient : MonoBehaviour
         if (playerColliding) {
             if ( canBePickedUp && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(1)) ) {
                 //make the player carry the nutrient
-                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>().CarryNutrient();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>().CarryNutrient(nutrientType);
                 Destroy(gameObject);
             }
         }

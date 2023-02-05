@@ -57,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: -655962268, guid: 809f223207a4628489d4bac2990aaa93, type: 3}
     - target: {fileID: 890149547429186611, guid: 040bd34a5cf4bcc408a3374556213e48, type: 3}
       propertyPath: m_Name
-      value: Nutrient
+      value: Nutrient Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 890149547429186615, guid: 040bd34a5cf4bcc408a3374556213e48, type: 3}
+      propertyPath: nutrientType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5273997577823421351, guid: 040bd34a5cf4bcc408a3374556213e48, type: 3}
       propertyPath: m_Controller

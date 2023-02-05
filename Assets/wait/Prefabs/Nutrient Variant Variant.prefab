@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nutrient Variant Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 890149547429186615, guid: 040bd34a5cf4bcc408a3374556213e48, type: 3}
+      propertyPath: nutrientType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5273997577823421351, guid: 040bd34a5cf4bcc408a3374556213e48, type: 3}
       propertyPath: m_Controller
       value: 

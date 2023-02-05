@@ -30,8 +30,11 @@ public class CharacterController2D : MonoBehaviour
     public Transform firePoint;
     public GameObject bullet;
 
-    public GameObject nutrient;
-    public SpriteRenderer redNutrientRenderer;
+    
+
+    public SpriteRenderer[] nutrientRenderers;
+    public GameObject[] nutrientPrefabs;
+    private int currentNutrientType;
 
     public GameObject activeNutrients;
 
@@ -164,10 +167,11 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    public void CarryNutrient() {
+    public void CarryNutrient(int nutrientType) {
+        currentNutrientType = nutrientType;
         canDrop = false;
         carryingNutrient = true;
-        redNutrientRenderer.enabled = true;
+        nutrientRenderers[nutrientType].enabled = true;
         gunSprite.enabled = false;
         StartCoroutine(setDroppable());
     }
@@ -179,8 +183,8 @@ public class CharacterController2D : MonoBehaviour
 
     public void DropNutrient() {
         carryingNutrient = false;
-        redNutrientRenderer.enabled = false;
-        GameObject instance = Instantiate(nutrient, transform.position, Quaternion.identity);
+        nutrientRenderers[currentNutrientType].enabled = false; 
+        GameObject instance = Instantiate(nutrientPrefabs[currentNutrientType], transform.position, Quaternion.identity);
         gunSprite.enabled = true;
         instance.transform.parent = activeNutrients.transform;
         
@@ -188,7 +192,8 @@ public class CharacterController2D : MonoBehaviour
 
     public void DepositNutrient() {
         carryingNutrient = false;
-        redNutrientRenderer.enabled = false;
+        nutrientRenderers[currentNutrientType].enabled = false;
+        currentNutrientType = 0;
         gunSprite.enabled = true;
     }
 
