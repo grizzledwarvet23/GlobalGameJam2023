@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NutrientSpawner : MonoBehaviour
 {
-    public GameObject nutrientPrefab;
+    public GameObject[] nutrientPrefabs;
     public GameObject activeNutrients;
     public CharacterController2D player;
 
@@ -14,7 +14,9 @@ public class NutrientSpawner : MonoBehaviour
     
     void Start()
     {
-        GameObject instance = Instantiate(nutrientPrefab, transform.position, Quaternion.identity);
+        //randomly choose a nutrient prefab to spawn
+        int random = Random.Range(0, 4);
+        GameObject instance = Instantiate(nutrientPrefabs[random], transform.position, Quaternion.identity);
         //make the parent of the nutrient the active nutrients object
         instance.transform.parent = activeNutrients.transform;
 
@@ -33,7 +35,20 @@ public class NutrientSpawner : MonoBehaviour
         isSpawning = true;
         yield return new WaitForSeconds(spawnTime);
         spawnTime = Mathf.Min(spawnTime + 0.5f, 7f);
-        GameObject instance = Instantiate(nutrientPrefab, transform.position, Quaternion.identity);
+        //randomly choose a nutrient prefab to spawn
+        int random = Random.Range(0, 4);
+        GameObject instance = Instantiate(nutrientPrefabs[random], transform.position, Quaternion.identity);
+        //make the parent of the nutrient the active nutrients object
+        instance.transform.parent = activeNutrients.transform;
+        isSpawning = false;
+    }
+
+    IEnumerator spawnNutrient(int index) {
+        isSpawning = true;
+        yield return new WaitForSeconds(spawnTime);
+        spawnTime = Mathf.Min(spawnTime + 0.5f, 7f);
+        //randomly choose a nutrient prefab to spawn
+        GameObject instance = Instantiate(nutrientPrefabs[index], transform.position, Quaternion.identity);
         //make the parent of the nutrient the active nutrients object
         instance.transform.parent = activeNutrients.transform;
         isSpawning = false;
