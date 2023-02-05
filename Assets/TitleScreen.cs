@@ -32,4 +32,8 @@ public class TitleScreen : MonoBehaviour
         MenuScreen.SetActive(false);
         HelpScreen.SetActive(true);
     }
+
+    public void QuitGame() {
+        Application.Quit();
+    }
 }
