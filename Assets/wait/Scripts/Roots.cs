@@ -67,7 +67,7 @@ public class Roots : MonoBehaviour
 
     public void WinGame() {
         //set scene to main menu for now
-        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("WinScreen");
     }
 
 

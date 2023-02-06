@@ -4289,12 +4289,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0526
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.217749
+      value: 15.9246
       objectReference: {fileID: 0}
     - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -33.70825
+      value: -33.6838
       objectReference: {fileID: 0}
     - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4327,6 +4335,10 @@ PrefabInstance:
     - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -121.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4271010937197289754, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
       propertyPath: m_Name
@@ -5162,12 +5174,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0957
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.131561
+      value: -13.6686
       objectReference: {fileID: 0}
     - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -33.70825
+      value: -33.5874
       objectReference: {fileID: 0}
     - target: {fileID: 4271010937197289753, guid: 352ed1f062c09fb48a0b5b00ffd11043, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5391,6 +5407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccac809a497a18488210def8a1e3ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuScreen: {fileID: 0}
+  HelpScreen: {fileID: 0}
 --- !u!1001 &1683752342
 PrefabInstance:
   m_ObjectHideFlags: 0
