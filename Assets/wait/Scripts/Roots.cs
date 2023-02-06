@@ -14,23 +14,11 @@ public class Roots : MonoBehaviour
 
     private Animator animator;
 
+    public AudioSource depositSound;
+
 
     void Start() {
         animator = GetComponent<Animator>();
-    }
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            progress += 25;
-            if(progress == 25) {
-                animator.Play("growth1");
-            }
-            else if(progress == 50) {
-                animator.Play("growth2");
-            }
-            else if (progress == 75) {
-                animator.Play("growth3");
-            }
-        }
     }
 
     public void takeDamage(int damage) {
@@ -47,6 +35,7 @@ public class Roots : MonoBehaviour
             progress += 5;
             progressBar.value = progress/100.0f;
             other.gameObject.GetComponent<CharacterController2D>().DepositNutrient();
+            depositSound.Play();
 
             if(progress == 25) {
                 animator.Play("growth1");
