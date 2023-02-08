@@ -8,6 +8,7 @@ public class TitleScreen : MonoBehaviour
 
     public GameObject MenuScreen;
     public GameObject HelpScreen;
+    public GameObject CreditsScreen;
 
     void Awake() {
         PauseMenu.GameIsPaused = false;
@@ -26,11 +27,17 @@ public class TitleScreen : MonoBehaviour
     public void ShowMenu() {
         MenuScreen.SetActive(true);
         HelpScreen.SetActive(false);
+        CreditsScreen.SetActive(false);
     }
 
     public void ShowHelp() {
         MenuScreen.SetActive(false);
         HelpScreen.SetActive(true);
+    }
+
+    public void ShowCredits() {
+        MenuScreen.SetActive(false);
+        CreditsScreen.SetActive(true);
     }
 
     public void QuitGame() {
