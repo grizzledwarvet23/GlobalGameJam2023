@@ -12,6 +12,9 @@ public class TitleScreen : MonoBehaviour
 
     void Awake() {
         PauseMenu.GameIsPaused = false;
+        //pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
     }
     // load the scene for the game
     public void PlayGame() {
